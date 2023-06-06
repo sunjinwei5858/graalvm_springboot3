@@ -17,3 +17,6 @@ spring:
       repositories:
         enabled: true
         bootstrap-mode: default
+mybatis:
+  type-aliases-package: com.example.demo5.pojo
+  mapper-locations: classpath:mybatis/mapper/*.xml

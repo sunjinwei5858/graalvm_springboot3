@@ -1,6 +1,8 @@
 package com.example.demo5.controller;
 
+import com.example.demo5.mapper.StudentMapper;
 import com.example.demo5.mapper.UserMapper;
+import com.example.demo5.pojo.Student;
 import com.example.demo5.pojo.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
@@ -18,6 +20,9 @@ public class HelloController {
     @Autowired
     private UserMapper userMapper;
 
+    @Autowired
+    private StudentMapper studentMapper;
+
 
     @GetMapping("/aaa")
     public String aaa() {
@@ -28,5 +33,10 @@ public class HelloController {
     @GetMapping("/bbb")
     public List<User> bbb() {
         return userMapper.findAll();
+    }
+
+    @GetMapping("/ccc")
+    public List<Student> ccc() {
+        return studentMapper.findList();
     }
 }
