@@ -16,6 +16,6 @@ public class HelloController {
 
     @GetMapping("/aaa")
     public List<User> aaa() {
-        return userMapper.findList();
+        return userMapper.findAll();
     }
 }

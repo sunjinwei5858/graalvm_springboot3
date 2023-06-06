@@ -1,13 +1,13 @@
 package com.example.demo5.mapper;
 
 import com.example.demo5.pojo.User;
-import org.apache.ibatis.annotations.Mapper;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-import java.util.List;
 
-@Mapper
-public interface UserMapper {
+@Repository
+public interface UserMapper extends JpaRepository<User, Integer> {
 
-    List<User> findList();
+
 
 }

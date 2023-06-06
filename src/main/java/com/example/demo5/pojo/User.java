@@ -1,11 +1,19 @@
 package com.example.demo5.pojo;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
+@Entity
 public class User {
 
+    @Id
     private Integer id;
 
+    @Column(name = "name")
     private String name;
 
+    @Column(name = "content")
     private String content;
 
     public Integer getId() {
