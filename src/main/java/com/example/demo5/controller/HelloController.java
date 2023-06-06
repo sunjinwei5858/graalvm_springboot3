@@ -3,6 +3,7 @@ package com.example.demo5.controller;
 import com.example.demo5.mapper.UserMapper;
 import com.example.demo5.pojo.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -12,10 +13,20 @@ import java.util.List;
 public class HelloController {
 
     @Autowired
+    private StringRedisTemplate redisTemplate;
+
+    @Autowired
     private UserMapper userMapper;
 
+
     @GetMapping("/aaa")
-    public List<User> aaa() {
+    public String aaa() {
+        redisTemplate.opsForValue().set("aa", "aaa");
+        return redisTemplate.opsForValue().get("aa");
+    }
+
+    @GetMapping("/bbb")
+    public List<User> bbb() {
         return userMapper.findAll();
     }
 }
