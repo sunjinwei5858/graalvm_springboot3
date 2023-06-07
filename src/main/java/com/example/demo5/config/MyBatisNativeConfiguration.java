@@ -59,7 +59,10 @@ import java.util.stream.Stream;
 
 /**
  * This configuration will move to mybatis-spring-native.
- * @see https://github.com/kazuki43zoo/mybatis-native-demo
+ * @see https://github.com/mybatis/spring-boot-starter/wiki/Quick-Start-for-building-native-image
+ * 注解方式写sql
+ * xml方式写sql
+ * xml方式写sql还需要额外的配置，pom需要配置,服务启动 ./demo5 -Djavax.xml.accessExternalDTD=all
  */
 @Configuration(proxyBeanMethods = false)
 @ImportRuntimeHints(MyBatisNativeConfiguration.MyBaitsRuntimeHintsRegistrar.class)

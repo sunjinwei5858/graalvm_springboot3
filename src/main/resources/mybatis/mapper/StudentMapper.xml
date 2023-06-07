@@ -5,9 +5,7 @@
 <mapper namespace="com.example.demo5.mapper.StudentMapper">
 
 
-    <select id="findList" resultType="com.example.demo5.pojo.Student">
+    <select id="findList2" resultType="com.example.demo5.pojo.Student">
         select * from student
     </select>
-
-
 </mapper>

@@ -39,4 +39,9 @@ public class HelloController {
     public List<Student> ccc() {
         return studentMapper.findList();
     }
+
+    @GetMapping("/ddd")
+    public List<Student> ddd() {
+        return studentMapper.findList2();
+    }
 }
